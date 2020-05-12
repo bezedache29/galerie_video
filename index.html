@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Galerie Video en JS</title>
+</head>
+<body>
+    <section class="container">
+        <h1 class="titre">Création d'un galerie vidéo avec Javascript</h1>
+        <p class="para">Une galerie vidéo permet de visionner vos vidéos sur votre site internet sans en sortir</p>
+        <p class="para"> Voici un exemple :</p>
+        <div class="galerie_buttons">
+            <button id="b1" class="bouton">Video 1</button>
+            <button id="b2" class="bouton">Video 2</button>
+            <button id="b3" class="bouton">Video 3</button>
+            <button id="b4" class="bouton">Video 4</button>
+        </div>
+        <div id="galerie_video">
+            <fieldset id="video1" class="videos">
+                <legend class="close"><span class="croix">X</span></legend>
+                <iframe src="https://www.youtube.com/embed/d6-Y5IxtYek?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </fieldset>
+            <fieldset id="video2" class="videos">
+                <legend class="close"><span class="croix">X</span></legend>
+                <iframe src="https://www.youtube.com/embed/crBuCEthLJw?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </fieldset>
+            <fieldset id="video3" class="videos">
+                <legend class="close"><span class="croix">X</span></legend>
+                <iframe src="https://www.youtube.com/embed/MFO8sC1U-iY?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </fieldset>
+            <fieldset id="video4" class="videos">
+                <legend class="close"><span class="croix">X</span></legend>
+                <iframe src="https://www.youtube.com/embed/Qvv4MfrJyDY?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </fieldset>
+        </div>
+        <div class="explications">
+            <p class="para">Intégration de cet galerie sur votre site</p>
+            <p class="mini-titre">Code HTML</p>
+            <div class="code">
+                <textarea>
+<div class="galerie_buttons">
+    <button id="b1" class="bouton">Video 1</button>
+    <button id="b2" class="bouton">Video 2</button>
+    <button id="b3" class="bouton">Video 3</button>
+    <button id="b4" class="bouton">Video 4</button>
+</div>
+<div id="galerie_video">
+    <fieldset id="video1" class="videos">
+        <legend class="close"><span class="croix">X</span></legend>
+        <iframe src="https://www.youtube.com/embed/d6-Y5IxtYek?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </fieldset>
+    <fieldset id="video2" class="videos">
+        <legend class="close"><span class="croix">X</span></legend>
+        <iframe src="https://www.youtube.com/embed/crBuCEthLJw?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </fieldset>
+    <fieldset id="video3" class="videos">
+        <legend class="close"><span class="croix">X</span></legend>
+        <iframe src="https://www.youtube.com/embed/MFO8sC1U-iY?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </fieldset>
+    <fieldset id="video4" class="videos">
+        <legend class="close"><span class="croix">X</span></legend>
+        <iframe src="https://www.youtube.com/embed/iy7mmbdau-g?&autoplay=0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+    </fieldset>
+</div>
+                </textarea>
+            </div>
+            <p class="mini-titre">Code CSS</p>
+            <div class="code">
+                <textarea>
+.galerie_buttons {
+    width: 100%;
+    margin: 80px auto;
+    display: flex;
+    justify-content: center;
+    flex-flow: row wrap
+}
+.bouton {
+    width: 25%;
+    border: none;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: rgb(53, 52, 52);
+    color: white;
+    font-size: 16px;
+    box-shadow: none;
+    text-decoration: none;
+    margin: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+button:hover {
+    cursor: pointer;
+    background-color: grey;
+}
+#galerie_video {
+    display: none;
+    border: 1px solid black;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgb(0, 0, 0,0.3);
+}
+.videos {
+    display: none;
+    width: 40%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 60px;
+    margin-bottom: 10px;
+    border: 2px solid black;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 20px;
+}
+.close {
+    text-align: right;
+    cursor: pointer;
+    font-size: 50px;
+    margin-bottom: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    color: white;
+}
+.croix {
+    border: 1px solid black;
+    padding: 0 10px;
+    border-radius: 50%;
+    background-color: black;
+}
+.croix:hover {
+    background-color: rgb(202, 193, 193);
+}
+.close:hover {
+    color: red;
+}
+iframe {
+    width: 900px;
+    height: 500px;
+    border-radius: 20px;
+}
+
+@media screen and (max-width: 1000px) {
+    iframe {
+        width: auto;
+        height: auto;
+    }
+}
+                </textarea>
+            </div>
+            <p class="mini-titre">Code JavaScript</p>
+            <div class="code">
+                <textarea>
+// Création d'un fonction permettant de d'ajouter une valeur a un display d'un ID
+function changerDisplay(id, valeur) {
+    var bloc = document.getElementById(id);
+    bloc.style.display = valeur;
+}
+
+// Création d'une fonction permettant de retourner un element d'un ID
+function bloc(id) {
+    return document.getElementById(id);
+}
+
+// Déclaration des varaibles des boutons
+var bouton1 = document.getElementById('b1');
+var bouton2 = document.getElementById('b2');
+var bouton3 = document.getElementById('b3');
+var bouton4 = document.getElementById('b4');
+    
+// Action lorsque le premier bouton est actionné
+bouton1.onclick = function() {
+    changerDisplay('video1', 'block');
+    // Pour avoir un background sombre derriere la video et z-index superieur pour ne pas cliquer sur des liens derriere la video pendant qu'elle tourne
+    changerDisplay('galerie_video', 'block');
+    // On declare une variable pour rechercher l'attribut SRC de la video pour changer l'autoplay au clic
+    var element = document.getElementById('video1').querySelector('iframe');
+    element.setAttribute('src', "https://www.youtube.com/embed/d6-Y5IxtYek?&autoplay=1");
+}
+
+// Action lorsque le deuxieme bouton est actionné
+bouton2.onclick = function() {
+    changerDisplay('video2', 'block');
+    // Pour avoir un background sombre derriere la video et z-index superieur pour ne pas cliquer sur des liens derriere la video pendant qu'elle tourne
+    changerDisplay('galerie_video', 'block');
+    // On declare une variable pour rechercher l'attribut SRC de la video pour changer l'autoplay au clic
+    var element = document.getElementById('video2').querySelector('iframe');
+    element.setAttribute('src', "https://www.youtube.com/embed/crBuCEthLJw?&autoplay=1");
+}
+
+// Action lorsque le troisieme bouton est actionné
+bouton3.onclick = function() {
+    changerDisplay('video3', 'block');
+    // Pour avoir un background sombre derriere la video et z-index superieur pour ne pas cliquer sur des liens derriere la video pendant qu'elle tourne
+    changerDisplay('galerie_video', 'block');
+    // On declare une variable pour rechercher l'attribut SRC de la video pour changer l'autoplay au clic
+    var element = document.getElementById('video3').querySelector('iframe');
+    element.setAttribute('src', "https://www.youtube.com/embed/MFO8sC1U-iY?&autoplay=1");
+}
+
+// Action lorsque le troisieme bouton est actionné
+bouton4.onclick = function() {
+    changerDisplay('video4', 'block');
+    // Pour avoir un background sombre derriere la video et z-index superieur pour ne pas cliquer sur des liens derriere la video pendant qu'elle tourne
+    changerDisplay('galerie_video', 'block');
+    // On declare une variable pour rechercher l'attribut SRC de la video pour changer l'autoplay au clic
+    var element = document.getElementById('video4').querySelector('iframe');
+    element.setAttribute('src', "https://www.youtube.com/embed/iy7mmbdau-g?&autoplay=1");
+}
+
+// Fermer la fenêtre video lorsqu'on apppuie sur la croix en haut a droite du lecteur
+// Declaration de la croix
+var fermer = document.getElementsByClassName('close');
+// Vu que c'est la meme class pour toutes les croix, on boucle
+for(var i = 0; i < fermer.length; i++) {
+    // Lorsque l'on clic sur la croix on demande a changer le display du bloc et a stoper la lecture de la video en cours
+    fermer[i].onclick = function() {
+        var maVideo1 = bloc('video1');
+        var maVideo2 = bloc('video2');
+        var maVideo3 = bloc('video3');
+        var maVideo4 = bloc('video4');
+
+        if(maVideo1.style.display == "block") {
+            var element = document.getElementById('video1').querySelector('iframe');
+            element.setAttribute('src', "https://www.youtube.com/embed/d6-Y5IxtYek?&autoplay=0");
+            maVideo1.style.display = 'none';
+            changerDisplay('galerie_video', 'none');
+        }else if(maVideo2.style.display == "block") {
+            var element = document.getElementById('video2').querySelector('iframe');
+            element.setAttribute('src', "https://www.youtube.com/embed/crBuCEthLJw?&autoplay=0");
+            maVideo2.style.display = 'none';
+            changerDisplay('galerie_video', 'none');
+        }else if(maVideo3.style.display == 'block') {
+            var element = document.getElementById('video3').querySelector('iframe');
+            element.setAttribute('src', "https://www.youtube.com/embed/MFO8sC1U-iY?&autoplay=0");
+            maVideo3.style.display = 'none';
+            changerDisplay('galerie_video', 'none');
+        }else if(maVideo4.style.display == 'block') {
+            var element = document.getElementById('video4').querySelector('iframe');
+            element.setAttribute('src', "https://www.youtube.com/embed/iy7mmbdau-g?&autoplay=0");
+            maVideo4.style.display = 'none';
+            changerDisplay('galerie_video', 'none');
+        }
+    }
+}
+                </textarea>
+            </div>
+        </div>
+    </section>
+    <script src="script.js"></script>
+</body>
+</html>
